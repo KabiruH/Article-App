@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>New Article Notification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 20px 0;
+      }
+      .button:hover {
+        background-color: #0052a3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+  <h1>New article <% if @article && @article.categories %>in <%= @article.categories.name %> category<% end %></h1>
+  <p>Dear <%= @user.email %>,</p>
+    <p>A new article has been added to the  <%= @article.categories.first.name %> category</p>
+    <ul>
+      <li>Title: <%= @article.title %></li>
+      <li>Body: <%= @article.body %></li>
+    </ul>
+  <p>Thank you for using our website!</p>
+  <a class="button" href="#">Visit Our Site</a>
+</div>
+
+  </body>
+</html>

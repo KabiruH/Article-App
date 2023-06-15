@@ -1,0 +1,156 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/articles":
+    get:
+      summary: list articles
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create article
+      responses:
+        '200':
+          description: successful
+  "/articles/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show article
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update article
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update article
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete article
+      responses:
+        '200':
+          description: successful
+  "/articles/{id}/likes":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    patch:
+      summary: like article
+      responses:
+        '200':
+          description: successful
+  "/articles/{id}/dislikes":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    patch:
+      summary: dislike article
+      responses:
+        '200':
+          description: successful
+  "/comments":
+    get:
+      summary: list comments
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create comment
+      responses:
+        '200':
+          description: successful
+  "/comments/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show comment
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update comment
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update comment
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete comment
+      responses:
+        '200':
+          description: successful
+  "/users":
+    get:
+      summary: list users
+      responses:
+        '200':
+          description: successful
+  "/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    patch:
+      summary: update user
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update user
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete user
+      responses:
+        '200':
+          description: successful
+  "/signup":
+    post:
+      summary: create user
+      responses:
+        '200':
+          description: successful
+  "/me":
+    get:
+      summary: me user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: http://127.0.0.1:3000
